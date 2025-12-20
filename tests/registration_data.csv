@@ -1,0 +1,4 @@
+user_first_name,user_last_name,address_street,address_city,address_state,address_zipcode,phone_number,ssn,username,password,repeated_password
+John,Doe,123 Main St,Anytown,CA,12345,555-1234,123-45-6789,johndoe,password123,password123
+Johnny,Bravo,124 Main St,Anyplace,BE,54321,555-4321,987-654-3210,johnybravo,password123,password124
+Johnnatan,Duplicated,125 Main St,Anyphow,DU,43512,123-4321,213-645-9768,johnatandup,password123,password123
