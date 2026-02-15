@@ -58,6 +58,7 @@ export class OpenAccountPage {
         await expect(this.accountOpenedHeader).toBeVisible();
         await expect(this.accountOpenedNumber).toBeVisible();
     }
+
     // Verify minimum initial deposit message
     async verifyMinimumInitialDeposit(minimumDeposit: string) {
         await expect(this.minimumBalanceMessage).toHaveText(`A minimum of ${minimumDeposit} must be deposited into this account at time of opening. Please choose an existing account to transfer funds into the new account.`);

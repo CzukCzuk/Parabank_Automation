@@ -1,17 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { ParabankAdminPage } from '../pages/parabank_admin_page';
-import { ParabankRegistrationPage, RegistrationData} from '../pages/parabank_registration_page';
-import { AccountsOverviewPage } from '../pages/accounts_overview';
+import { ParabankAdminPage } from '../../pages/main/parabank_admin_page';
+import { ParabankRegistrationPage, RegistrationData} from '../../pages/main/parabank_registration_page';
+import { AccountsOverviewPage } from '../../pages/account services/accounts_overview';
 import fs from 'fs';
 import { parse } from 'csv-parse/sync';
-
-test.beforeEach(async ({ page }) => {
-    // Clean up database before each test
-    await page.goto('https://parabank.parasoft.com/parabank/admin.htm');
-    const adminPage = new ParabankAdminPage(page);
-    await adminPage.cleanDatabase();
-    await expect(page.getByText('Database cleaned')).toBeVisible();
-});
 
 test('Set Initial Balance and register an account to verify balance', async ({ page }) => {
     // Go to Admin Page and set Initial Balance
@@ -27,7 +19,7 @@ test('Set Initial Balance and register an account to verify balance', async ({ p
         columns: true,
         skip_empty_lines: true
     });
-    const data = records[0] as RegistrationData;
+    const data = records[1] as RegistrationData;
 
     // Go to registration page
     await page.goto('https://parabank.parasoft.com/parabank/about.htm');

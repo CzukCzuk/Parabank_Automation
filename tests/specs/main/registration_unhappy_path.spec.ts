@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { ParabankRegistrationPage, RegistrationData} from '../pages/parabank_registration_page';
+import { ParabankRegistrationPage, RegistrationData} from '../../pages/main/parabank_registration_page';
 import fs from 'fs';
 import { parse } from 'csv-parse/sync';
 
@@ -7,6 +7,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('https://parabank.parasoft.com/parabank/register.htm');
 });
 
+test.describe('Registration Unhappy Path Tests', () => {
 test('User registration - empty fields', async ({ page }) => {
     //Leave all fields empty and try to register
     const registrationPage = new ParabankRegistrationPage(page);
@@ -34,7 +35,7 @@ test('User registration - mismatched passwords', async ({ page }) => {
         columns: true,
         skip_empty_lines: true
     });
-    const data = records[1] as RegistrationData;
+    const data = records[24] as RegistrationData;
     await registrationPage.fillRegistrationFormFromCsv(data);
     // Send registration form
     await registrationPage.registerButton.click();
@@ -50,7 +51,7 @@ test('User registration - duplicated data', async ({ page }) => {
         columns: true,
         skip_empty_lines: true
     });
-    const data = records[2] as RegistrationData;
+    const data = records[20] as RegistrationData;
     await registrationPage.fillRegistrationFormFromCsv(data);
     // Send registration form
     await registrationPage.registerButton.click();
@@ -64,5 +65,5 @@ test('User registration - duplicated data', async ({ page }) => {
 
     // Verify error message for duplicated username
     await expect(page.getByText('This username already exists.')).toBeVisible();
-}
-);
+});
+});

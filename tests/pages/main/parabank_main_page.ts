@@ -39,8 +39,8 @@ export class ParabankPages {
   readonly passwordInput: Locator;
   readonly repeatedPasswordInput: Locator;
   readonly registerButton: Locator;
-
-
+  // Forgot Password Page Locators
+  readonly forgotPasswordLink: Locator;
 
     constructor(page: Page) {
         // Home Page Locators
@@ -76,6 +76,8 @@ export class ParabankPages {
         this.passwordInput = page.locator('[id="customer.password"]');
         this.repeatedPasswordInput = page.locator('[id="repeatedPassword"]');
         this.registerButton = page.getByRole('link', { name: 'Register' });
+        // Forgot Password Page Locators
+        this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot login info?' });
     }
   // STRUCTURE AND CONTENT VERIFICATION ACTIONS
   // Verify Parabank image and text are visible
@@ -114,6 +116,11 @@ export class ParabankPages {
     await this.page.getByRole('button', { name: 'Log In' }).click();
   }
 
+  //Click Log Out Link
+  async clickLogoutButton() {
+    await this.page.getByRole('link', { name: 'Log Out' }).click();
+  }
+
   // Click register button
   async clickRegisterButton() {
     await this.registerButton.click();
@@ -146,5 +153,9 @@ export class ParabankPages {
   async verifyEmptyLoginErrorMessage() {
     await expect(this.page.getByRole('heading', { name: 'Error!' })).toBeVisible();
     await expect(this.page.getByText('Please enter a username and password.')).toBeVisible();
+  }
+
+  async navigateToForgotPasswordPage() {
+    await this.forgotPasswordLink.click();
   }
 }

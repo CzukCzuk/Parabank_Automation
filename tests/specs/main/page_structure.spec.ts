@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { ParabankPages } from '../pages/parabank_main_page';
+import { ParabankPages } from '../../pages/main/parabank_main_page';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('https://parabank.parasoft.com/parabank/index.htm');

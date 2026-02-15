@@ -28,10 +28,10 @@ export class ParabankTransferFundsPage {
         await expect(this.transferFundsToAccountSelect).toBeVisible();
         await expect(this.transferFundsButton).toBeVisible();
     }
-    async transferFunds(amount: string, fromAccountIndex: number, toAccountIndex: number) {
+    async transferFunds(amount: string, fromAccountId: number, toAccountId: number) {
     await this.transferFundsAmountInput.fill(amount);
-    await this.transferFundsFromAccountSelect.selectOption({ index: fromAccountIndex });
-    await this.transferFundsToAccountSelect.selectOption({ index: toAccountIndex });
+    await this.transferFundsFromAccountSelect.selectOption({ index: fromAccountId });
+    await this.transferFundsToAccountSelect.selectOption({ index: toAccountId });
     // Get actual selected account values
     const fromAccountValue = await this.transferFundsFromAccountSelect.inputValue();
     const toAccountValue = await this.transferFundsToAccountSelect.inputValue();

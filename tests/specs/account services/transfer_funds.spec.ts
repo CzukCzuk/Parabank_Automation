@@ -1,17 +1,12 @@
 import { test, expect } from '@playwright/test';
-import { ParabankTransferFundsPage } from '../pages/transfer_funds';
-import { ParabankAdminPage } from '../pages/parabank_admin_page';
-import { ParabankRegistrationPage, RegistrationData } from '../pages/parabank_registration_page';
-import { OpenAccountPage } from '../pages/open_account';
+import { ParabankTransferFundsPage } from '../../pages/account services/transfer_funds';
+import { ParabankAdminPage } from '../../pages/main/parabank_admin_page';
+import { ParabankRegistrationPage, RegistrationData } from '../../pages/main/parabank_registration_page';
+import { OpenAccountPage } from '../../pages/account services/open_account';
 import fs from 'fs';
 import { parse } from 'csv-parse/sync';
 
-test.beforeEach(async ({ page }) => {
-  // Clean database before Funds transfer test
-    await page.goto('https://parabank.parasoft.com/parabank/admin.htm');
-    const adminPage = new ParabankAdminPage(page);
-    await adminPage.cleanDatabase();
-});
+
 
 test('Transfer Funds', async ({ page }) => {
     // Loading data from CSV file
@@ -20,7 +15,7 @@ test('Transfer Funds', async ({ page }) => {
             columns: true,
             skip_empty_lines: true
         });
-        const data = records[0] as RegistrationData;
+        const data = records[16] as RegistrationData;
 
     // Register a new user
     const registrationPage = new ParabankRegistrationPage(page);

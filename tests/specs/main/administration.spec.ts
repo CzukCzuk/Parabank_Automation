@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { ParabankAdminPage } from '../pages/parabank_admin_page';
+import { ParabankAdminPage } from '../../pages/main/parabank_admin_page';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('https://parabank.parasoft.com/parabank/admin.htm');
 });
-
+test.describe('Administration Page Tests', () => {
 test('Application settings fields are present on Admin Page', async ({ page }) => {
     const adminPage = new ParabankAdminPage(page);
     await adminPage.verifyApplicationSettingsFields();
@@ -33,4 +33,5 @@ test('Verify loan provider dropdown options', async ({ page }) => {
 test('Verify loan processor dropdown options', async ({ page }) => {
     const adminPage = new ParabankAdminPage(page);
     await adminPage.verifyLoanProcessorOptions();
+});
 });

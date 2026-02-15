@@ -1,16 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { ParabankAdminPage } from '../pages/parabank_admin_page';
-import { ParabankRegistrationPage, RegistrationData } from '../pages/parabank_registration_page';
-import { OpenAccountPage } from '../pages/open_account';
+import { ParabankAdminPage } from '../../pages/main/parabank_admin_page';
+import { ParabankRegistrationPage, RegistrationData } from '../../pages/main/parabank_registration_page';
+import { OpenAccountPage } from '../../pages/account services/open_account';
 import fs from 'fs';
 import { parse } from 'csv-parse/sync';
-
-test.beforeEach(async ({ page }) => {
-  // Clean database before Open New Account test
-    await page.goto('https://parabank.parasoft.com/parabank/admin.htm');
-    const adminPage = new ParabankAdminPage(page);
-    await adminPage.cleanDatabase();
-});
 
 test('Open New Account functionality', async ({ page }) => {
     // Loading data from CSV file
@@ -19,7 +12,7 @@ test('Open New Account functionality', async ({ page }) => {
             columns: true,
             skip_empty_lines: true
         });
-        const data = records[0] as RegistrationData;
+        const data = records[11] as RegistrationData;
 
     // Register a new user
     const registrationPage = new ParabankRegistrationPage(page);
@@ -38,6 +31,8 @@ test('Open New Account functionality', async ({ page }) => {
 });
 
 test('Check minimum balance after opening new account', async ({ page }) => {
+    // Go to Admin Page and set Minimum Balance
+    await page.goto('https://parabank.parasoft.com/parabank/admin.htm');
     const adminPage = new ParabankAdminPage(page);
     await adminPage.setMinimumBalance('300');
     
@@ -47,7 +42,7 @@ test('Check minimum balance after opening new account', async ({ page }) => {
             columns: true,
             skip_empty_lines: true
         });
-        const data = records[0] as RegistrationData;
+        const data = records[12] as RegistrationData;
 
     // Register a new user
     const registrationPage = new ParabankRegistrationPage(page);

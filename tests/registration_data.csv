@@ -1,4 +1,26 @@
 user_first_name,user_last_name,address_street,address_city,address_state,address_zipcode,phone_number,ssn,username,password,repeated_password
 John,Doe,123 Main St,Anytown,CA,12345,555-1234,123-45-6789,johndoe,password123,password123
-Johnny,Bravo,124 Main St,Anyplace,BE,54321,555-4321,987-654-3210,johnybravo,password123,password124
+Johnny,Bravo,124 Main St,Anyplace,BE,54321,555-4321,987-654-3210,johnybravo,password123,password123
 Johnnatan,Duplicated,125 Main St,Anyphow,DU,43512,123-4321,213-645-9768,johnatandup,password123,password123
+Jane,Smith,456 Oak St,Sometown,TX,67890,555-5678,234-56-7890,janesmith,password123,password123
+Jane,Doe,457 Oak St,Somecity,TX,67891,555-8765,345-67-8901,janedoe,password123,password123
+Jake,Peralta,789 Pine St,Brooklyn,NY,11201,555-0001,456-78-9012,jakeperalta,password123,password123
+Amy,Santiago,790 Pine St,Brooklyn,NY,11202,555-0002,567-89-0123,amysantiago,password123,password123
+Rosa,Diaz,791 Pine St,Brooklyn,NY,11203,555-0003,678-90-1234,rosadiaz,password123,password123
+Terry,Jeffords,792 Pine St,Brooklyn,NY,11204,555-0004,789-01-2345,terryjeffords,password123,password123
+Holt,Raymond,793 Pine St,Brooklyn,NY,11205,555-0005,890-12-3456,raymondholt,password123,password123
+Kevin,Cozner,794 Pine St,Brooklyn,NY,11206,555-0006,901-23-4567,kevincozner,password123,password123
+Gina,Linetti,795 Pine St,Brooklyn,NY,11207,555-0007,012-34-5678,ginalinetti,password123,password123
+Hitchcock,Scully,796 Pine St,Brooklyn,NY,11208,555-0008,123-45-6780,hitchcockscully,password123,password123
+Laura,Mendez,120 Oak Ave,Queens,NY,11385,555-1011,321-54-9876,lauramendez,securePass1,securePass1
+Brian,Thompson,455 Maple Rd,Albany,NY,12207,555-1012,432-65-1987,bthompson,securePass1,securePass1
+Nina,Patel,78 Cedar St,Edison,NJ,08817,555-1013,543-76-2198,npatel,securePass1,securePass1
+Marcus,Lee,910 Birch Blvd,San Jose,CA,95112,555-1014,654-87-3219,marcuslee,securePass1,securePass1
+Olivia,Reed,33 Willow Ln,Portland,OR,97205,555-1015,765-98-4321,oliviareed,securePass1,securePass1
+Daniel,Kowalski,640 Spruce Dr,Chicago,IL,60616,555-1016,876-09-5432,dkowalski,securePass1,securePass1
+Samuel,Garcia,221 Aspen Ct,Miami,FL,33101,555-1017,987-10-6543,sgarcia,securePass1,securePass1
+Ethan,Walker,912 River Rd,Trenton,NJ,08618,555-2011,111-22-3333,ethanwalker,securePass2,securePass2
+Sophia,Nguyen,44 Harbor St,San Mateo,CA,94401,555-2012,222-33-4444,sophianguyen,securePass2,securePass2
+Carlos,Ramirez,305 Sunset Blvd,Miami,FL,33130,555-2013,333-44-5555,carlosramirez,securePass2,securePass2
+Hannah,Brooks,18 Meadow Way,Boulder,CO,80302,555-2014,444-55-6666,hannahbrooks,securePass2,securePass2
+Victor,Petrov,770 Lake Shore Dr,Cleveland,OH,44114,555-2015,555-66-7777,victorpetrov,securePass2,securePass3
