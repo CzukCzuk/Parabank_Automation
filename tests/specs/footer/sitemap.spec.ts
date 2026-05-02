@@ -1,10 +1,8 @@
-import {   test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { ParabankSitemapPage } from '../../pages/footer/parabank_sitemap';
-import { ParabankPages } from '../../pages/parabank_main_page';
-import { before } from 'node:test';
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('https://parabank.parasoft.com/parabank/sitemap.htm');
+    await page.goto('sitemap.htm');
 }
 );
 

@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test';
-import { ParabankRegistrationPage, RegistrationData} from '../../pages/main/parabank_registration_page';
-import { ParabankAdminPage } from '../../pages/main/parabank_admin_page';
+import { ParabankRegistrationPage, type RegistrationData} from '../../pages/main/parabank_registration_page';
 import fs from 'fs';
 import { parse } from 'csv-parse/sync';
 
+// Load testing data once per spec file outside of tests
+const file = fs.readFileSync('tests/data/registration_data.csv', 'utf-8');
+const records = parse(file, {
+    columns: true,
+    skip_empty_lines: true
+}) as RegistrationData[];
+
 test('User registration - happy path', async ({ page }) => {
-    // Loading data from CSV file
-    const file = fs.readFileSync('tests/registration_data.csv', 'utf-8');
-    const records = parse(file, {
-        columns: true,
-        skip_empty_lines: true
-    });
-    const data = records[19] as RegistrationData;
+    // Use records[0] directly — this account is NOT pre-registered (skipped in global-setup)
+    const data = records[0];
 
     // Go to registration page
-    await page.goto('https://parabank.parasoft.com/parabank/about.htm');
-    await page.getByRole('link', { name: 'Register' }).click();
+    await page.goto('register.htm');
 
     const registrationPage = new ParabankRegistrationPage(page);
 

@@ -63,7 +63,7 @@ export class ParabankPages {
         // Login Page Locators
         this.usernameLoginInput = page.locator('input[name="username"]');
         this.passwordLoginInput = page.locator('input[name="password"]');
-        // Registraion Locators
+        // Registration Locators
         this.firstNameInput = page.locator('[id="customer.firstName"]');
         this.lastNameInput = page.locator('[id="customer.lastName"]');
         this.addressInput = page.locator('[id="customer.address.street"]');
@@ -131,7 +131,7 @@ export class ParabankPages {
     await expect(this.page.getByText('Welcome')).toBeVisible();
   }
   // Verify successful login by checking for the presence of the logout button
-  async logoutBUttonVisible() {
+  async logoutButtonVisible() {
     await expect(this.page.getByText('Log Out')).toBeVisible();
   }
 

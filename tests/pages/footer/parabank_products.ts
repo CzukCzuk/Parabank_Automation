@@ -11,7 +11,7 @@ export class ParabankProductsPage {
         // Products Page Locators
         this.page = page;
         this.productsHeader = page.getByText('PRODUCTS', { exact: true });
-        this.productsText = page.getByRole('heading', { name: 'Innovative and Intelligent' });
+        this.productsText = page.getByRole('heading', { name: 'Find the Testing Solution That Fits Your Team Perfectly' });
         this.headerProductsLink = page.locator('#headerPanel').locator('text=Products');
     }
 

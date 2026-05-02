@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { ParabankContactUsPage } from '../../pages/footer/parabank_contact_us';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://parabank.parasoft.com/parabank/contact.htm');
+  await page.goto('contact.htm');
 });
 
 test('Contact Us page has correct structure and content', async ({ page }) => {

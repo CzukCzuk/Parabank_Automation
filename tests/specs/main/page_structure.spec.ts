@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { ParabankPages } from '../../pages/main/parabank_main_page';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://parabank.parasoft.com/parabank/index.htm');
+  await page.goto('index.htm');
 });
 
 test.describe('Page Structure', () => {
@@ -25,4 +25,3 @@ test('Left navigation options are present', async ({ page }) => {
     await parabank.verifyLeftNavigationOptions();
   });
 });
-

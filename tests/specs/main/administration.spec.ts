@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { ParabankAdminPage } from '../../pages/main/parabank_admin_page';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://parabank.parasoft.com/parabank/admin.htm');
+  await page.goto('admin.htm');
 });
 test.describe('Administration Page Tests', () => {
 test('Application settings fields are present on Admin Page', async ({ page }) => {
